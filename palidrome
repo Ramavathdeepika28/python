@@ -1,0 +1,7 @@
+#read the same backward as forword
+s=input()
+reverse=s[::-1]
+if reverse==s:
+    print("it is palidrome.")
+else:
+    print("it is not a palidrome.")
