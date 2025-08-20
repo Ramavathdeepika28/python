@@ -1,0 +1,11 @@
+w=input()
+t=input()
+if w=="sunny":
+    if t=="morning":
+        print("we can do work")
+    else:
+        print("we can sleep")
+elif w=="rainy":
+    print("we can eat hot")
+else:
+    print("sleep")
