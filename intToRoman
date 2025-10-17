@@ -1,0 +1,20 @@
+class Solution(object):
+    def intToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        # Precomputed Roman representations for ones, tens, hundreds, thousands
+        M = ["", "M", "MM", "MMM"]              # 0, 1000, 2000, 3000
+        C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]  # 0–900
+        X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]  # 0–90
+        I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]  # 0–9
+
+        # Break the number into thousands, hundreds, tens, ones
+        thousands = num // 1000
+        hundreds  = (num % 1000) // 100
+        tens      = (num % 100) // 10
+        ones      = num % 10
+
+        # Concatenate the corresponding Roman parts
+        return M[thousands] + C[hundreds] + X[tens] + I[ones]
